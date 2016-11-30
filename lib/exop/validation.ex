@@ -52,7 +52,7 @@ defmodule Exop.Validation do
 
   @spec log_errors(Map.t) :: :ok | {:error, any}
   defp log_errors(errors) do
-    unless Mix.env == :test, do: Logger.warn("#{__MODULE__} errors: \n#{errors_message(errors)}")
+    Logger.warn("#{__MODULE__} errors: \n#{errors_message(errors)}")
   end
 
   @spec errors_message(Map.t) :: String.t
